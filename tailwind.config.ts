@@ -8,11 +8,25 @@ export default {
   ],
   theme: {
     extend: {
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        accent: "#FF8F9C",
+        blackish: "#1b1b1b",
+      },
+
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+        },
       },
     },
   },
   plugins: [],
+  // darkMode: 'class',
 } satisfies Config;

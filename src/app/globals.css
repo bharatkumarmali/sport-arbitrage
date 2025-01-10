@@ -2,20 +2,186 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* :root {
+  --background: #1C212B;
+  --foreground: #ededed; 
+  --gray: #919191;
+  --black: #ffffff;
+  --white: #343434;
+  --body-bg-color: #ffffff;
+  --revert: revert;
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1C212B;
     --foreground: #ededed;
+    --gray: #919191;
+    --black: #343434;
+    --white: #ffffff;
+    --dark-black: black;
+    --dark-white: white;
+    --body-bg-color: #1C212B;
+    --sine-gray: #404B61;
+    --gray-57: #525A6B42;
+    --gray-222-21-28: hsl(222, 21%, 28%);
+    --gray-sm-text: #929292;
+    --gray-bg-bookmark: #2F374694;
+    --gray-border: transparent;
+    --orange: #FFC107;
+    --gray-20 : hsl(0, 0%, 20%);
+    --gray-2-27: hsl(0, 2%, 76%);
+    --black-otp-input: #333333;
+    --light-green-bg: #1E2923;
+    --green-text: #25C06C;
   }
+
+  .filter {
+    filter: invert(0);
+  }
+  
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #1C212B;
+    --foreground: #ededed; 
+    --black: #C6C6C680;
+    --dark-black: white;
+    --dark-white: black;
+    /* --white: #C6C6C680; */
+    --white: #343434;
+    --body-bg-color: #ffffff;
+    --sine-gray: #919191;
+    --gray-sm-text: black;
+    --gray-bg-bookmark: white;
+    --gray-border: black;
+    --orange: #03A9F4;
+  }
+
+  .filter {
+    filter: invert(1);
+  }
+
 }
 
-body {
+
+/* latin */
+@font-face {
+  font-family: 'Jaro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jaro/v6/ea8WadQwV_r_bPHWEA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* @font-face {
+  font-family: "Jaro";
+  src: url("/public/font/DancingScript-Regular.ttf");
+} */
+
+/* body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@layer components {
+  .bg-accent {
+    @apply bg-blackray-200 rounded-md p-[6px] text-[15px] cursor-pointer hover:bg-accent hover:text-white;
+  }
+
+  .sidebar-link {
+    @apply flex items-center space-x-7 py-2.5 px-3.5 w-[90%] cursor-pointer rounded-md mt-3
+    /* #1d232e; */
+  }
+
+  .hr-line {
+    @apply h-[1px] w-full bg-[#7F7F7F] my-2.5
+  }
+
+  .font-kadwa {
+    font-family: "kadwa";
+  }
+
+  .font-Inter {
+    font-family: "Inter";
+  }
+
+  .font-Jaro {
+    font-family: "Jaro", serif;
+  }
+
+
+  .bookmark {
+    background-color: var(--gray-bg-bookmark);
+    color: var(--dark-white);
+    border: 1px solid var(--gray-border);
+  }
+  
+  .active-sidebar-link {
+    color: var(--orange);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera --------------------------------------*/
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .login-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    /* background: url("/images/login-img.png"); */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.544), rgba(0, 0, 0, 0.6)),
+    url('/images/login-img.png');
+    background-size: cover;
+  }
+
+  .login {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.245), rgba(0, 0, 0, 0.345))
+  }
+
+  .otp-input {
+    background-color: var(--black-otp-input);
+  }
+}
+
+
+/* custom-select -----------------------------------------------------------------*/
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.custom-select-wrapper img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom-select {
+  appearance: none;
+  /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #343434;
+  color: white;
+  padding: 5px 35px 5px 10px;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  position: relative;
+  width: 100%;
+}
+
+.custom-select>option {
+  border: none;
 }
