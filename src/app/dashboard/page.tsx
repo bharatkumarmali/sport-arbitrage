@@ -4,9 +4,21 @@ import SelectElement from '../components/SelectElement';
 import InputField from '../components/InputField';
 import SidebarContainer from '../components/SidebarContainer';
 
-function page() {
+// Add interfaces for type safety
+interface Option {
+  id: number;
+  option: string;
+}
 
-    const NFL = [
+interface TableData {
+  id: number;
+  title1: string;
+  title2: string;
+}
+
+function Page() {
+
+    const NFL: Option[] = [
         {
             id: 1,
             option: 'NFL'
@@ -21,7 +33,7 @@ function page() {
         }
     ];
 
-    const Moneyline = [
+    const Moneyline: Option[] = [
         {
             id: 1,
             option: 'Moneyline'
@@ -36,7 +48,7 @@ function page() {
         }
     ]
 
-    const Game = [
+    const Game: Option[] = [
         {
             id: 1,
             option: 'Game'
@@ -51,7 +63,7 @@ function page() {
         }
     ]
 
-    const tableData = [
+    const tableData: TableData[] = [
         {
             id: 1,
             title1: 'Chargers',
@@ -306,4 +318,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
